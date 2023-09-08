@@ -1,4 +1,4 @@
-## Application Overview
+## EasyLifeNub-Client
 
 ## Technologies Used
 
@@ -57,4 +57,3 @@ npm start
 ## Features
 
 ## Technologies Used
-# EasyLifeNub-Client
