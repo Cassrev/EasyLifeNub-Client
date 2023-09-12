@@ -9,6 +9,7 @@ export const loginUser = (user) => {
       username: user.username,
       password: user.password
     })
+
   }).then(res => res.json())
 }
 

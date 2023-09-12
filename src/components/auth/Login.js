@@ -2,73 +2,65 @@ import { useEffect, useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
 
-export const Login = ({ setToken, setStaff }) => {
+export const Login = ({ setToken }) => {
   const username = useRef()
   const password = useRef()
   const navigate = useNavigate()
-  const [isUnsuccessful, setisUnsuccessful] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
-
     const user = {
       username: username.current.value,
       password: password.current.value
     }
 
-    loginUser(user).then(res => {
-      if ("valid" in res && res.valid) {
-        setToken(res.token)
-        setStaff(res.staff)
-        navigate("/")
-      }
-      else {
-        setisUnsuccessful(true)
-      }
-    })
+    loginUser(user)
+      .then(res => {
+        if ("valid" in res && res.valid) {
+          // if ("valid" in res && res.valid) {
+          setToken(res.token)
+          navigate("/")
+        }
+      })
   }
   /*--------------------------------------------------------------------*/
-  // Autofill Username/Password by default streamline devolopment process 
-   useEffect(
+  // Autofill email/Password by default streamline devolopment process 
+  useEffect(
     () => {
-      username.current.value = "jonathanislame@aol.com"
+      username.current.value = "ches@eet.com"
       password.current.value = "lemmon"
     },
     []
-  ) 
+  )
   /*--------------------------------------------------------------------*/
-  return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleLogin}>
-        <h1 className="title">Rare Publishing</h1>
-        <p className="subtitle">Please sign in</p>
+  return (<>
+    <article className="container--login">
+      <form className="form--login" onSubmit={handleLogin}>
+        <h2>Please sign in</h2>
+        {/* <fieldset>
+          <label htmlFor="inputEmail"> Email address </label>
+          <input type="email"
+            className="form-control"
+            ref={email} />
+        </fieldset> */}
 
-        <div className="field">
-          <label className="label">Username</label>
-          <div className="control">
-            <input className="input" type="text" ref={username} />
-          </div>
-        </div>
+        <fieldset>
+          <label htmlFor="inputEmail"> Email address </label>
+          <input ref={username} type="text" id="email" className="form-control" placeholder="Email" />
+        </fieldset>
+        <fieldset>
+          <label htmlFor="inputPassword"> Password </label>
+          <input ref={password} type="password" id="password" className="form-control" placeholder="Password" />
+        </fieldset>
 
-        <div className="field">
-          <label className="label">Password</label>
-          <div className="control">
-            <input className="input" type="password" ref={password} />
-          </div>
-        </div>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit" >Submit</button>
-          </div>
-          <div className="control">
-            <Link to="/register" className="button is-link is-light">Cancel</Link>
-          </div>
-        </div>
-        {
-          isUnsuccessful ? <p className="help is-danger">Email or password not valid</p> : ''
-        }
+        <button className="button" type="submit" >Sign In</button>
       </form>
-    </section>
+
+      <div className="controlReg">
+        <Link to="/register" className="button">Not a member yet?</Link>
+      </div>
+    </article>
+    </>
   )
 }
