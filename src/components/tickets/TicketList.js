@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getPosts, getPostsByCategory, getPostsByTitle, getPostsByUser, getPostsByTag} from "../../managers/posts";
+import { getPosts,} from "../../managers/posts";
 import { getUsers } from "../../managers/users";
-import { getCategories } from "../../managers/categories";
 import { Link } from "react-router-dom";
-import { getTags } from "../../managers/TagManager";
 
-export const PostList = () => {
+export const TicketList = () => {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [users, setUsers] = useState([]);

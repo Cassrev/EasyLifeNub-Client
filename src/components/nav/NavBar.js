@@ -14,13 +14,9 @@ export const NavBar = ({ token, setToken }) => {
   }
 
   return (
-    <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
+    <nav className="navbarDiv" role="navigation" aria-label="mainNavn">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
-          <img src={Logo} height="3rem" alt="Rare Logo" /> <h1 className="title is-4">Rare Publishing</h1>
-        </a>
 
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -34,13 +30,10 @@ export const NavBar = ({ token, setToken }) => {
             token
               ?
               <>
-                <Link to="/posts" className="navbar-item">Posts</Link>
-                <Link to="/my-posts" className="navbar-item">My Posts</Link>
-                <Link to="/categories" className="navbar-item">Category Management</Link>
-                <Link to="/users" className="navbar-item">User Management</Link>
-                <Link to="/tags" className="navbar-item">Tag Management</Link>
-                <Link to="/reactions" className="navbar-item">Reaction Management</Link>
-                <Link to="/postform" className="navbar-item">New Post</Link>
+                <Link to="/tickets" className="navbar-item">Tickets</Link>
+                <Link to="/my-tickets" className="navbar-item">My Tickets</Link>
+                <Link to="/games" className="navbar-item">Games</Link>
+                <Link to="/ticketform" className="navbar-item">Create Ticket</Link>
 
 
 

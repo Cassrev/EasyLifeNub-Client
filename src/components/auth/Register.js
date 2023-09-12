@@ -3,37 +3,31 @@ import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
 
-export const Register = ({ setToken, setStaff }) => {
+export const Register = ({ setToken }) => {
   const firstName = useRef()
   const lastName = useRef()
   const email = useRef()
   const username = useRef()
-  const bio = useRef()
-  const profileImageUrl = useRef()
   const password = useRef()
-  const verifyPassword = useRef()
   const passwordDialog = useRef()
   const navigate = useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault()
 
-    if (password.current.value === verifyPassword.current.value) {
+    if (password.current.value) {
       const newUser = {
         username: username.current.value,
         first_name: firstName.current.value,
         last_name: lastName.current.value,
         email: email.current.value,
         password: password.current.value,
-        bio: bio.current.value,
-        profile_image_url: profileImageUrl.current.value
       }
 
       registerUser(newUser)
         .then(res => {
           if ("valid" in res && res.valid) {
             setToken(res.token)
-            setStaff(res.staff)
             navigate("/")
           }
         })
@@ -43,8 +37,8 @@ export const Register = ({ setToken, setStaff }) => {
   }
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleRegister}>
+    <section className="columns">
+      <form className="column" onSubmit={handleRegister}>
         <h1 className="title">Rare Publishing</h1>
         <p className="subtitle">Create an account</p>
         <div className="field">
@@ -79,40 +73,21 @@ export const Register = ({ setToken, setStaff }) => {
           <label className="label">Password</label>
           <div className="field-body">
             <div className="field">
-              <p className="control is-expanded">
+              <p className="control">
                 <input className="input" type="password" placeholder="Password" ref={password} />
               </p>
             </div>
 
-            <div className="field">
-              <p className="control is-expanded">
-                <input className="input" type="password" placeholder="Verify Password" ref={verifyPassword} />
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="field">
-          <label className="label">Profile Image</label>
-          <div className="control">
-            <input className="input" placeholder="Add a link to an image for your profile" ref={profileImageUrl}/>
-          </div>
-        </div>
-
-        <div className="field">
-          <label className="label">Bio</label>
-          <div className="control">
-            <textarea className="textarea" placeholder="Tell us about yourself..." ref={bio}></textarea>
           </div>
         </div>
 
 
         <div className="field is-grouped">
           <div className="control">
-            <button className="button is-link" type="submit">Submit</button>
+            <button className="button is-link" type="submit">Register</button>
           </div>
           <div className="control">
-            <Link to="/login" className="button is-link is-light">Cancel</Link>
+            Already registered? <Link to="/login" className="button is-link is-light">Cancel</Link>
           </div>
         </div>
 
