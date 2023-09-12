@@ -11,10 +11,6 @@ export const QaPageDetail = ({ token }) => {
             .then(setUser)
     }, [token])
 
-
-    
-    
-
     return (
         <section className="userPage">
 
