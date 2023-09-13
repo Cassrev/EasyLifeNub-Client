@@ -48,8 +48,8 @@ export const TicketList = ({ token }) => {
         {tickets.map((ticket) => (
           <section className="ticket" key={ticket?.id}>
             <div>==============================</div>
-            <div>Title:</div><div className="ticketTitle">{ticket?.issue_title}</div>
-            <div>Game:</div><div className="ticketTitle">{ticket?.game.title}</div>
+            <div>Title:</div>  <div className="ticketTitle"><Link to={`/tickets/${ticket?.id}`}>{ticket?.issue_title}</Link></div>
+            <div>Game:</div><div className="gameTitle">{ticket?.game.title}</div>
             <div>Qa Tester:</div><div className="ticketTitle">{ticket?.qa.first_name}</div>
             {currentUser && currentUser.id === ticket?.qa.id && (
               <footer>

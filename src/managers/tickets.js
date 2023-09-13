@@ -6,8 +6,8 @@ export const getTickets = () => {
   }).then(res => res.json());
 };
 
-export const getTicketsById = (ticketId) => {
-  return fetch(`http://localhost:8000/tickets?${ticketId}`, {
+export const getTicketsById = (id) => {
+  return fetch(`http://localhost:8000/tickets/${id}`, {
     headers: {
         "Authorization": `Token ${localStorage.getItem("auth_token")}`
     }

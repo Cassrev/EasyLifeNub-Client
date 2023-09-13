@@ -5,6 +5,7 @@ import { Authorized } from "./Authorized"
 import { QaPageDetail } from "../components/users/QaTester/QaPageDetail.js"
 import { TicketList } from "../components/tickets/TicketList.js"
 import { CreateTicketForm } from "../components/tickets/CreateTicketForm.js"
+import { TicketDetail } from "../components/tickets/TicketDetails.js"
 
 export const ApplicationViews = ({ token, setToken, }) => {
   return (
@@ -15,6 +16,7 @@ export const ApplicationViews = ({ token, setToken, }) => {
         <Route path="/" element={<QaPageDetail token={token} />} />
 
         <Route path="/tickets" element={<TicketList token={token} />} />
+        <Route path="/tickets/:ticketId" element={<TicketDetail token={token} />} />
         <Route path="/ticketForm" element={<CreateTicketForm token={token} />} />
 
       </Route>
