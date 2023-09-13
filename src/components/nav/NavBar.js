@@ -1,7 +1,6 @@
 import { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
-import Logo from "./rare.jpeg"
 
 export const NavBar = ({ token, setToken }) => {
   const navigate = useNavigate()
@@ -17,30 +16,21 @@ export const NavBar = ({ token, setToken }) => {
     <nav className="navbarDiv" role="navigation" aria-label="mainNavn">
       <div className="navbar-brand">
 
-        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
       </div>
 
       <div className="navbar-menu" ref={navbar}>
         <div className="navbar-start">
-          {
-            token
-              ?
+          
               <>
                 <Link to="/tickets" className="navbar-item">Tickets</Link>
                 <Link to="/my-tickets" className="navbar-item">My Tickets</Link>
                 <Link to="/games" className="navbar-item">Games</Link>
-                <Link to="/ticketform" className="navbar-item">Create Ticket</Link>
+                <Link to="/ticketForm" className="navbar-item">Create Ticket</Link>
 
 
 
               </>
-              :
-              ""
-          }
+
         </div>
 
         <div className="navbar-end">
@@ -49,7 +39,7 @@ export const NavBar = ({ token, setToken }) => {
               {
                 token
                   ?
-                  <button className="button is-outlined" onClick={() => {
+                  <button className="button" onClick={() => {
                     setToken('')
                     navigate('/login')
                   }}>Logout</button>
