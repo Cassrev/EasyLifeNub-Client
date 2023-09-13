@@ -23,7 +23,7 @@ export const NavBar = ({ token, setToken }) => {
           
               <>
                 <Link to="/tickets" className="navbar-item">Tickets</Link>
-                <Link to="/my-tickets" className="navbar-item">My Tickets</Link>
+                {/* <Link to="/my-tickets" className="navbar-item">My Tickets</Link> */}
                 <Link to="/games" className="navbar-item">Games</Link>
                 <Link to="/ticketForm" className="navbar-item">Create Ticket</Link>
 

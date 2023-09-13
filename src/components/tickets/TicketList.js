@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getTickets } from "../../managers/tickets";
 import { deleteTickets } from "../../managers/tickets"
 import { getUserByToken } from "../../managers/tokens";
+import { TicketEdit } from "./TicketEditPopupForm";
 
 export const TicketList = ({ token }) => {
   const navigate = useNavigate()
@@ -18,14 +19,6 @@ export const TicketList = ({ token }) => {
   useEffect(() => {
     getTickets().then((ticketsData) => setTicket(ticketsData));
   }, []);
-
-  const editButton = (post) => {
-    return (
-      <button onClick={() => { navigate(`/my-posts/${post.id}/edit`) }}>
-        Edit
-      </button>
-    )
-  }
 
   const handleDelete = (ticket) => {
     return (
@@ -54,13 +47,15 @@ export const TicketList = ({ token }) => {
       <div className="tickets">
         {tickets.map((ticket) => (
           <section className="ticket" key={ticket?.id}>
+            <div>==============================</div>
             <div>Title:</div><div className="ticketTitle">{ticket?.issue_title}</div>
             <div>Game:</div><div className="ticketTitle">{ticket?.game.title}</div>
             <div>Qa Tester:</div><div className="ticketTitle">{ticket?.qa.first_name}</div>
             {currentUser && currentUser.id === ticket?.qa.id && (
-              <div>
+              <footer>
                 {handleDelete(ticket)}
-              </div>
+                <TicketEdit ticket={ticket} />
+              </footer>
               )}
           </section>
         ))}
