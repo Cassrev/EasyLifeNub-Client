@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { postTickets } from "../../managers/tickets"
 import { useNavigate } from "react-router-dom"
 import { getGames } from "../../managers/games"
