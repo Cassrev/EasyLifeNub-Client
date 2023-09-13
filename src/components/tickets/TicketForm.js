@@ -5,7 +5,7 @@ import { getTags, postTagRelationships } from "../../managers/TagManager";
 import { getUserByToken } from "../../managers/tokens";
 
 
-export const PostForm = () => {
+export const TicketForm = () => {
 
     const [categories, setCategories] = useState([]);
     const [formError, setFormError] = useState(false);
@@ -20,8 +20,8 @@ export const PostForm = () => {
 
 
     const [post, update] = useState({
-        user: 0,
-        category: 0,
+        qa: 0,
+        game: 0,
         title: "",
         publication_date: new Date().toISOString().split('T')[0],
         image_url: "",
