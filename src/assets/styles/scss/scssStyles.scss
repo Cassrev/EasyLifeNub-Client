@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800&display=swap');
+
+// Bootstrap mixins and functions
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "./node_modules/bootstrap/scss/functions";
+
+// Change variables here
+@import "sassStyles/_variables.scss";
+
+// Bootstrap
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// Vendor
+@import "sassStyles/vendor";
+
+// sassStyles mixins & functions
+@import "sassStyles/mixins";
+@import "sassStyles/functions";
+
+// Utilities
+@import "sassStyles/reboot";
+@import "sassStyles/utilities";
+
+// Layout
+@import "sassStyles/layout";
+
+// Components
+@import "sassStyles/components";
+
+// write your custom styles here!

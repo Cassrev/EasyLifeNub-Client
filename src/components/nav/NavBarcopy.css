@@ -1,0 +1,64 @@
+/* Navbar.module.css */
+.sidenav {
+   /* Your CSS styles for sidenav */
+   background-color: #fff;
+   width: 240px;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1032;
+   padding-top: 20px;
+   padding-right: 20px;
+   padding-bottom: 60px;
+   overflow-y: auto;
+   transition: all 0.3s ease-in-out;
+}
+
+.navbar-inner {
+   /* Your CSS styles for navbar-inner */
+}
+
+.navbar-collapse {
+   /* Your CSS styles for navbar-collapse */
+}
+
+.navbar-nav {
+   /* Your CSS styles for navbar-nav */
+}
+
+.nav-item {
+   /* Your CSS styles for nav-item */
+   margin-bottom: 20px;
+}
+
+.nav-link {
+   /* Your CSS styles for nav-link */
+   display: flex;
+   align-items: center;
+   color: #333;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 4px;
+   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link.active {
+   /* Your CSS styles for active nav-link */
+   background-color: #f0f0f0;
+   color: #333;
+}
+
+.nav-link i {
+   /* Your CSS styles for nav-link i */
+   font-size: 18px;
+   margin-right: 10px;
+}
+
+.nav-link span {
+   /* Your CSS styles for nav-link span */
+   font-size: 16px;
+   font-weight: 600;
+}
+
+/* Add more styles as needed for your Navbar components */

@@ -1,0 +1,88 @@
+/* MainPage.module.css */
+.g-sidenav-show {
+   /* Your CSS styles for g-sidenav-show */
+}
+
+.main-content {
+   /* Your CSS styles for main-content */
+}
+
+.container-fluid {
+   /* Your CSS styles for container-fluid */
+}
+
+.removable {
+   /* Your CSS styles for removable */
+}
+
+.col-lg-6 {
+   /* Your CSS styles for col-lg-6 */
+}
+
+.card {
+   /* Your CSS styles for card */
+}
+
+.card-body {
+   /* Your CSS styles for card-body */
+}
+
+.card-title {
+   /* Your CSS styles for card-title */
+   font-size: 24px;
+   font-weight: 600;
+   color: #333;
+   margin-bottom: 10px;
+}
+
+.card-row {
+   /* Your CSS styles for card-row */
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 10px;
+}
+
+.ml-2 {
+   /* Your CSS styles for ml-2 */
+   margin-left: 10px;
+}
+
+.card-title-text {
+   /* Your CSS styles for card-title-text */
+   font-size: 18px;
+   font-weight: 600;
+   color: #333;
+}
+
+.text-muted {
+   /* Your CSS styles for text-muted */
+   color: #888;
+   font-size: 14px;
+}
+
+.btn {
+   /* Your CSS styles for btn */
+   font-size: 16px;
+   font-weight: 600;
+   text-transform: uppercase;
+   padding: 8px 16px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline-dark {
+   /* Your CSS styles for btn-outline-dark */
+   color: #343a40;
+   background-color: transparent;
+   border: 2px solid #343a40;
+   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline-dark:hover {
+   /* Your CSS styles for btn-outline-dark:hover */
+   background-color: #343a40;
+   color: #fff;
+}
