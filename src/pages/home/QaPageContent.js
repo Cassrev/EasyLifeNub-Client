@@ -1,4 +1,5 @@
 import { Col, Row } from "@themesberg/react-bootstrap";
+import { List, Datagrid, TextField, EmailField } from "react-admin";
 import { useEffect, useState } from "react";
 // import { getUserByToken } from "../../../managers/tokens";
 import { useNavigate, useParams, Route, Switch, Redirect } from "react-router-dom";
@@ -7,49 +8,20 @@ export const QaPageContentHome = ({ token }) => {
     const [user, setUser] = useState()
     let navigate = useNavigate()
 
-    // useEffect(() => {
-    //     getUserByToken(token)
-    //         .then(setUser)
-    // }, [token])
-
     
     return (
-        <div className="container-fluid pt-3 'container'">
-            <Row>
-                <Col xs={12} xl={12} className="mb-4">
-                    <Col xs={12} xl={8} className="mb-4">
-                        <Row>
-                            <Col xs={12} className="mb-4">
-                                test
-                                {/* <PageVisitsTable /> */}
-                            </Col>
-
-                            <Col xs={12} lg={6} className="mb-4">
-                                another col tsttt
-                                {/* <TeamMembersWidget /> */}
-                            </Col>
-                        </Row>
-                    </Col>
-                </Col>
-            </Row>
-            <div className="row removable 'row'">
-                <div className="col-lg-6 'col'"></div>
-                <div className="col-lg-6 'col'">
-                    <div className="card border 'card'">
-                        <div className="card-body 'card-body'">
-                            <h4 className="card-title mb-0 'card-title'">Your Tickets Listings</h4>
-                            <div className="row 'card-row'">
-                                <div className="ml-2 'ml-2'">
-                                    <h4 className="card-title text-dark mb-0 'card-title-text'">Software Development Engineer</h4>
-                                    <span className="text-xs text-muted mb-0 'text-muted'">Facebook</span>
-                                </div>
-                                <button className="btn btn-sm ml-auto btn-outline-dark 'btn'">Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <List>
+            <Datagrid rowClick="edit">
+                <TextField source="id" />
+                <TextField source="name" />
+                <TextField source="username" />
+                <EmailField source="email" />
+                <TextField source="address.street" />
+                <TextField source="phone" />
+                <TextField source="website" />
+                <TextField source="company.name" />
+            </Datagrid>
+        </List>
     );
 }
 
