@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getTickets } from "../../managers/tickets";
 import { deleteTickets } from "../../managers/tickets"
 import { getUserByToken } from "../../managers/tokens";
-import { TicketEdit } from "./TicketEditPopupForm";
+import { TicketEdit } from "../../components/tickets/TicketEditPopupForm";
 
 export const TicketList = ({ token }) => {
   const navigate = useNavigate()

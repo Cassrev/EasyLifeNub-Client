@@ -3,5 +3,5 @@ export const getGames = () => {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
-    }).then(res => res.json());
-};
+    }).then(res => res.json())
+}

@@ -1,9 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { ApplicationViews } from "./views/ApplicationViews"
-import { NavBar } from "./components/nav/NavBar"
-// import { SideNav } from "./components/ui/testside"
-// import { NavBarDash } from "./components/nav/NavBarcopy";
-import { SideNavBarDash } from "./components/nav/SideNavBarcopy";
+import { SideNavBar } from "./components/nav/SideNavBar";
 
 export const EasyLifeNub = () => {
   const [token, setTokenState] = useState(localStorage.getItem('auth_token'))
@@ -14,7 +11,10 @@ export const EasyLifeNub = () => {
   }
 
   return <>
-    <SideNavBarDash token={token} setToken={setToken} />
+    {
+      token
+        ? <SideNavBar token={token} setToken={setToken} /> : null
+    }
     <ApplicationViews token={token} setToken={setToken} />
   </>
 }

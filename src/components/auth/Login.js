@@ -37,12 +37,6 @@ export const Login = ({ setToken }) => {
     <article className="container--login">
       <form className="form--login" onSubmit={handleLogin}>
         <h2>Please sign in</h2>
-        {/* <fieldset>
-          <label htmlFor="inputEmail"> Email address </label>
-          <input type="email"
-            className="form-control"
-            ref={email} />
-        </fieldset> */}
 
         <fieldset>
           <label htmlFor="inputEmail"> Email address </label>

@@ -23,6 +23,6 @@ export const updateUser = (userId, data) => {
             'Content-Type': 'application/json',
             Authorization: `Token ${localStorage.getItem('auth_token')}`,
         },
-        body: JSON.stringify(data), // Send only the updated data
+        body: JSON.stringify(data), 
     });
 };

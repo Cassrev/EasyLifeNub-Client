@@ -1,3 +1,14 @@
-.navbar-item img {
-   max-height: 3rem;
+.qa--NavSideBarContainer {
+   display: flex;
+   height: 50vh;
+}
+
+.qa--dashnav {
+   background: #a8d5e5;
+}
+
+.titleapp {
+   color: #165a72;
+   margin-bottom: 40px;
+   margin-top: 20px;
 }
