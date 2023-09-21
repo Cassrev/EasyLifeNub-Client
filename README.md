@@ -90,7 +90,7 @@ Then their ticket is successfully deleted and no longer show
 As a QA Tester, I should be able to create a ticket and submit the ticket
 Given the QA tester wants to create a ticket on ticket list or detail page
 When the QA tester clicks the create ticket button
-Then they are directed to create ticket page and fill out the form and upload video proof
+Then they are directed to create ticket page and fill out the form
 When the QA tester is done filling out the form and clicks submit ticket button
 Then they are directed to ticket list page
 
