@@ -45,8 +45,10 @@ npm start
 ```
 4. Login credentials:
 ```txt
+ches@eet.com
 ```
 ```txt
+lemmon
 ```
 
 ## ERD
