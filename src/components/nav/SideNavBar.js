@@ -55,7 +55,6 @@ export const SideNavBar = ({ token, setToken }) => {
             </Sidebar.Item>
           </Sidebar.ItemGroup>
         </Sidebar.Items>
-        {/* </div> */}
       </Sidebar>
     </Flowbite>
   );

@@ -1,12 +1,8 @@
 import { useRef, } from "react"
-import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
-import { Button, Card, Checkbox, Label, TextInput, Tabs } from 'flowbite-react';
-import { HiAdjustments, HiClipboardList, HiUserCircle } from 'react-icons/hi';
-import { MdDashboard } from 'react-icons/md';
-import { Img, Text } from "components/ui/uiexport";
-import { Typography } from "@material-tailwind/react";
+import { Button, Card, Label, TextInput } from 'flowbite-react';
+
 
 export const Register = ({ setToken }) => {
     const firstName = useRef()

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
-import { Button, Card, Checkbox, Label, TextInput, Tabs } from 'flowbite-react';
+import { Button, Card, Label, TextInput } from 'flowbite-react';
 
 export const Login = ({ setToken }) => {
     const username = useRef()

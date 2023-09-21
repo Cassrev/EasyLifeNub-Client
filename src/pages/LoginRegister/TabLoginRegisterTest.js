@@ -1,5 +1,4 @@
 import { useRef, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { Tabs, Flowbite } from 'flowbite-react';
 import { HiUserCircle } from 'react-icons/hi';
 import { MdDashboard } from 'react-icons/md';
@@ -9,9 +8,6 @@ import { Login } from "./Login";
 
 
 export const TabLoginRegisterTest = ({ setToken }) => {
-    const username = useRef()
-    const password = useRef()
-    const navigate = useNavigate()
     const [activeTab, setActiveTab] = useState(null);
     const tabsRef = useRef([]);
     const props = { setActiveTab, tabsRef };

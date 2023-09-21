@@ -5,7 +5,6 @@ import { getGames } from "../../managers/games"
 
 export const CreateTicketForm = () => {
     const navigate = useNavigate()
-    const [currentUser, setCurrentUser] = useState()
     const [ticketFormInfo, setFormCreation] = useState({
         qa: 0,
         game: "", 

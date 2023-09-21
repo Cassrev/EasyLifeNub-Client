@@ -54,7 +54,6 @@ export const TicketList = ({ token }) => {
           <Button onClick={() => navigate(`/ticketForm`)}>Create Ticket</Button>
         </div>
 
-        {/* <div className="flex inline-grid grid-cols-3 px-4 pt-6 xl:gap-4 w-fit"> */}
         <div className="grid px-4 pt-6 grid-cols-3 xl:gap-4 w-fit">
           {tickets.map((ticket) => (
             <div className="p-4 mb-4 space-y-6 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 w-full">
