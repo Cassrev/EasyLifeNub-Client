@@ -1,17 +1,39 @@
 {
-  "name": "rare-client",
+  "name": "ezlifenub-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@heroicons/react": "^2.0.18",
+    "@material-tailwind/react": "^2.1.2",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.10",
+    "@tailwindcss/forms": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@themesberg/react-bootstrap": "^1.4.1",
+    "bootstrap": "5.0.0-beta1",
+    "flowbite": "^1.8.1",
+    "flowbite-react": "^0.6.0",
+    "moment-timezone": "^0.5.31",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-datepicker": "^4.16.0",
+    "react-admin": "^4.14.0",
+    "react-burger-menu": "^3.0.9",
+    "react-copy-to-clipboard": "^5.0.3",
+    "react-datepicker": "^4.5.0",
+    "react-datetime": "^3.0.4",
     "react-dom": "^18.2.0",
+    "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.3.0",
+    "react-router-hash-link": "^2.3.1",
     "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.1",
     "reactjs-popup": "^2.0.6",
+    "sass": "^1.50.0",
+    "simplebar-react": "^2.3.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -37,5 +59,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "10.4.2",
+    "postcss": "8.4.8",
+    "tailwindcss": "^3.3.3"
   }
 }

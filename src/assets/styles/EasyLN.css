@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", "Figtree", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    font-size: 24px;
+    position: relative;
+}
+
+/* .main-content{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    overflow-y: auto;
+
+    /* w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900 */

@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
 import { ApplicationViews } from "./views/ApplicationViews"
-import { NavBar } from "./components/nav/NavBar"
+import { SideNavBar } from "./components/nav/SideNavBar";
+import { TopNavBar } from "components/nav/TopNavBar";
 
 
 export const EasyLifeNub = () => {
@@ -12,7 +13,18 @@ export const EasyLifeNub = () => {
   }
 
   return <>
-    <NavBar token={token} setToken={setToken} />
-    <ApplicationViews token={token} setToken={setToken}/>
+    {
+      token
+        ?
+        <>
+          <SideNavBar token={token} setToken={setToken} />
+          <TopNavBar token={token} setToken={setToken} />
+        </>
+        : null
+    }
+    {/* <div id="main-content" className="relative h-screen lg:ml-64"> */}
+    <div id="main-content" className="relative h-screen">
+      <ApplicationViews token={token} setToken={setToken} />
+    </div>
   </>
 }
