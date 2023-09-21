@@ -70,8 +70,6 @@ export const Login = ({ setToken }) => {
                             className="cursor-pointer font-medium min-w-[528px] sm:min-w-full mt-6 text-base text-center"
                             type="submit"
                             shape="round"
-                            href="/"
-
                         >
                             Log in
                         </Button>

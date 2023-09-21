@@ -124,7 +124,6 @@ export const Register = ({ setToken }) => {
                             className="cursor-pointer font-medium min-w-[528px] sm:min-w-full mt-6 text-base text-center"
                             type="submit"
                             shape="round"
-                            href="/"
                         >
                             Register
                         </Button>

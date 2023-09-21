@@ -22,9 +22,6 @@ export const EasyLifeNub = () => {
         </>
         : null
     }
-    {/* <div id="main-content" className="relative h-screen lg:ml-64"> */}
-    <div id="main-content" className="relative h-screen">
       <ApplicationViews token={token} setToken={setToken} />
-    </div>
   </>
 }
