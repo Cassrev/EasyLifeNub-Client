@@ -32,13 +32,13 @@ export const TabLoginRegisterTest = ({ setToken }) => {
                         <Tabs.Item active
                             title="Login"
                             icon={HiUserCircle}>
-                            <Login />
+                            <Login setToken={setToken} />
                         </Tabs.Item>
 
                         <Tabs.Item
                             title="Register"
                             icon={MdDashboard}>
-                            <Register />
+                            <Register setToken={setToken} />
                         </Tabs.Item>
                     </Tabs.Group>
                 </Flowbite>
