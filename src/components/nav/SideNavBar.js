@@ -1,79 +1,62 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import {
-  Card,
-  Typography,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  Chip,
-} from "@material-tailwind/react";
-import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-} from "@heroicons/react/24/solid";
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Flowbite, Sidebar } from 'flowbite-react';
+import { HiArrowSmRight, HiChartPie, HiInbox } from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
 
 export const SideNavBar = ({ token, setToken }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <Card className="!sticky h-[calc(45vh-2rem)] md:hidden overflow-auto w-fit max-w-[20rem] shadow-xl shadow-blue-gray-900/5">
-      <div className="mb-2 p-4">
-        <Typography variant="h5" color="blue-gray">
-          Sidebar
-        </Typography>
-      </div>
-      <List>
+    <Flowbite
+      theme={{theme: {sidebar: {root: {inner: "bg-green-300"}}}}}>
 
-        <Link to="/">
-          <ListItem>
-            <ListItemPrefix>
-              <PresentationChartBarIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Dashboard
-          </ListItem >
-        </Link>
+      <Sidebar
+        className="fixed flex font-normal duration-75 h-fit w-fit">
 
-        <ListItem>
-          <ListItemPrefix>
-            <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Games
-        </ListItem>
+        <Sidebar.Items
+          className='space-y-2 font-medium justify-start'>
+          <Sidebar.ItemGroup>
 
-        <Link to="/tickets">
-          <ListItem>
-            <ListItemPrefix>
-              <ShoppingBagIcon className="h-5 w-5" />
-            </ListItemPrefix>
+            <Sidebar.Item
+              className='flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100'
+              href="/"
+              icon={HiChartPie}
+            >
+              <span class="ml-3">Dashboard</span>
+            </Sidebar.Item>
 
-            Tickets
-          </ListItem>
-        </Link>
+            <Sidebar.Item
+              className='flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100'
+              href="/games"
+              icon={HiChartPie}
+            >
+              <span class="ml-3">Games</span>
+            </Sidebar.Item>
 
-        <hr className="my-2 border-blue-gray-50" />
+            <Sidebar.Item
+              className='flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100'
+              href="/tickets"
+              icon={HiInbox}
+            >
+              <span class="ml-3">Tickets</span>
 
-        <Link to="/login">
-          <ListItem
-            onClick={() => {
-              setToken('')
-              navigate('/login')
-            }}>
-            <ListItemPrefix>
-              <PowerIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Log Out
-          </ListItem>
-        </Link>
+            </Sidebar.Item>
+          </Sidebar.ItemGroup>
 
-      </List>
-    </Card>
+          <Sidebar.ItemGroup>
+            <Sidebar.Item
+              className='flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100'
+              icon={HiArrowSmRight}
+              onClick={() => {
+                setToken('')
+                navigate('/login')
+              }}>
+              <span class="ml-3">Logout</span>
+
+            </Sidebar.Item>
+          </Sidebar.ItemGroup>
+        </Sidebar.Items>
+        {/* </div> */}
+      </Sidebar>
+    </Flowbite>
   );
-}
+};

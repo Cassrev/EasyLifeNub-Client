@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react"
-import Popup from 'reactjs-popup'
-import { useNavigate, useParams } from "react-router-dom"
 import { putTicket } from "../../managers/tickets"
-import "../../assets/styles/ticketEditPopUp.css"
+import { Button, Modal, TextInput, Label, Textarea } from 'flowbite-react';
 
-
-export const TicketEdit = ({ticket}) => {
+export const TicketEdit = ({ ticket }) => {
     const [editTicket, setEditTicket] = useState(ticket)
-    const [categories, setCategories] = useState([])
-    const { ticketId } = useParams()
-    const navigate = useNavigate()
+    const [openModal, setOpenModal] = useState("");
+    const props = { openModal, setOpenModal };
 
     const changeTicketState = (domEvent) => {
         const { name, value } = domEvent.target
@@ -19,66 +15,53 @@ export const TicketEdit = ({ticket}) => {
         }))
     }
 
-
-    const handleTicketEdit = (evt, close) => {
-        evt.preventDefault()
-
-        const shouldEdit = window.confirm("Are you sure you want to make ticket changes?")
-        if (shouldEdit) {
-            putTicket(editTicket).then(() => {
-                close()
-                window.location.reload(true, { replace: true })
-                // navigate(`/tickets`, { replace: true })
-            })
-        }
+    const handleTicketEdit = () => {
+        putTicket(editTicket).then(() => {
+            window.location.reload(true, { replace: true })
+        })
     }
 
     return <>
-        <Popup
-            trigger={<button className="button"> Edit </button>}
-            modal
-            nested
-        >
-            {close => (
-                <div className="modal">
-                    <button className="close" onClick={close}>
-                        &times;
-                    </button>
-                    <form onSubmit={(evt) => handleTicketEdit(evt, close)}>
-                        <div className="header"> Edit Ticket </div>
-                        <fieldset>
-                            <div className="form-group">
-                                <label htmlFor="EditTitle" className="subtitle">Title: </label>
-                                <input type="text" name="issue_title" className="form-control input"
-                                    value={editTicket.issue_title}
-                                    onChange={changeTicketState}
-                                />
-                                <input
-                                    type="text"
-                                    name="bug_description"
-                                    placeholder="Describe Bug"
-                                    value={editTicket.bug_description}
-                                    onChange={changeTicketState}
-                                />
-                            </div>
-                        </fieldset>
-                        <button
-                            className="button"
-                            onClick={() => {
-                                console.log('modal closed ');
-                                close();
-                            }}
+        <Button onClick={() => props.setOpenModal('form-elements')}>Edit</Button>
+        <Modal show={props.openModal === 'form-elements'} size="md" popup onClose={() => props.setOpenModal(undefined)}>
+            <Modal.Header>Edit Ticket</Modal.Header>
+            <Modal.Body>
+                <div className="space-y-6">
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="title" value="Edit Ticket Title" />
+                        </div>
+                        <TextInput id="title" type="text" name="issue_title" value={editTicket.issue_title} onChange={changeTicketState} />
+                        <div
+                            className="max-w-md"
+                            id="textarea"
                         >
-                            Cancel
-                        </button>
-                        <button type="submit"
-                            className="btn btn-primary">
-                            Save Changes
-                        </button>
-                    </form>
+                            <div className="mb-2 block">
+                                <Label htmlFor="bugdesc" value="Edit Bug Description" />
+                            </div>
+                            <Textarea
+                                id="bugdesc"
+                                name="bug_description"
+                                placeholder="Describe Bug"
+                                value={editTicket.bug_description}
+                                onChange={changeTicketState}
+                                rows={4}
+                            />
+                        </div>
+                    </div>
+                    <Button color="success"
+                        type="submit"
+                        onClick={() => {
+                            props.setOpenModal(undefined)
+                            handleTicketEdit();
+                        }}>
+                        Save Changes
+                    </Button>
+                    <Button color="failure" onClick={() => props.setOpenModal(undefined)}>
+                        No, cancel
+                    </Button>
                 </div>
-            )
-            }
-        </Popup >
+            </Modal.Body>
+        </Modal>
     </>
 }
